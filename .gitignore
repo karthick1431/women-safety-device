@@ -1,0 +1,26 @@
+# Build output
+.vscode/
+build/
+*.bin
+*.elf
+*.map
+
+# Python and notebooks
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Sensitive project data
+.env
+*.key
+*.pem
+secrets/
+private-data/
+data/raw/
+*.csv.local
+
+# OS files
+.DS_Store
+Thumbs.db

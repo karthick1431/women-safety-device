@@ -1,0 +1,9 @@
+Item,Purpose,Status,Validation needed
+ESP32 DevKit V1 / ESP32-WROOM-32,Main controller,Proposed,Confirm exact board and pinout
+MPU6050,Acceleration and angular velocity,Proposed,Confirm I2C address and library
+GPS receiver such as NEO-6M,Latitude and longitude,Proposed,Test outdoor fix and voltage levels
+Cellular module compatible with local network,SMS or call,Proposed,Confirm bands and peak current
+SOS push button,Manual emergency trigger,Recommended,Test debounce and enclosure access
+SW-420 vibration module,Optional vibration input,Optional,Measure false triggers
+Battery and regulated supply,Portable power,Required for build,Validate voltage and burst current
+Prototype board or PCB,Mechanical/electrical assembly,Not supplied,Create verified schematic before fabrication
