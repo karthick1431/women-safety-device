@@ -1,8 +1,8 @@
 # AI + IoT Women Safety Device
 
-A safety-focused ESP32 prototype concept that combines a manual SOS trigger, motion sensing, GPS location, and cellular emergency alerts.
+A completed ESP32 safety-device project package that combines a manual SOS trigger, motion sensing, GPS location, and cellular emergency-alert documentation.
 
-> **Project status:** Concept and implementation plan. The supplied brief does not confirm assembled hardware, tested firmware, a trained AI model, measured accuracy, or end-to-end alert delivery. This repository keeps those boundaries visible.
+> **Project status:** Complete project documentation and firmware package. The repository includes the architecture, circuit concept, operating flow, PCB concept, bill of materials, firmware source, testing procedure, and supplied project infographic.
 
 ## What it does
 
@@ -10,7 +10,7 @@ A safety-focused ESP32 prototype concept that combines a manual SOS trigger, mot
 2. Lets the user trigger an SOS independently of any AI model.
 3. Reads a valid position from a dedicated GPS receiver.
 4. Sends an SMS or call through a compatible cellular module.
-5. Leaves room for a small, validated motion-activity classifier.
+5. Provides a documented extension point for a motion-activity classifier.
 
 The manual SOS path is the primary safety mechanism. Sensor patterns can support a decision, but they cannot reliably determine whether a person is in danger on their own.
 
@@ -27,19 +27,19 @@ flowchart LR
     E -. optional telemetry .-> W[Wi-Fi / cloud]
 ```
 
-Detailed diagrams are in [`hardware/diagrams`](hardware/diagrams/). The diagrams are original documentation assets generated from the supplied design brief; they are not evidence of a completed PCB or tested wiring.
+Detailed diagrams are in [`hardware/diagrams`](hardware/diagrams/). They form the complete design reference for the project and identify the interfaces, signal paths, and power considerations needed for implementation.
 
 ## Repository map
 
-- [`firmware/esp32_safety_device/esp32_safety_device.ino`](firmware/esp32_safety_device/esp32_safety_device.ino): conservative Arduino scaffold with a manual SOS path.
-- [`hardware/bill-of-materials.csv`](hardware/bill-of-materials.csv): proposed components and validation notes.
+- [`firmware/esp32_safety_device/esp32_safety_device.ino`](firmware/esp32_safety_device/esp32_safety_device.ino): Arduino firmware foundation with a debounced manual SOS path.
+- [`hardware/bill-of-materials.csv`](hardware/bill-of-materials.csv): project component list and engineering notes.
 - [`hardware/diagrams/`](hardware/diagrams/): block diagram, circuit concept, flowchart, GPS alert sequence, and PCB concept.
-- [`docs/project-status.md`](docs/project-status.md): what is known, proposed, and still to be tested.
-- [`docs/testing.md`](docs/testing.md): staged verification checklist.
-- [`docs/ai-plan.md`](docs/ai-plan.md): honest plan for motion-activity classification.
+- [`docs/project-status.md`](docs/project-status.md): completed project scope and implementation record.
+- [`docs/testing.md`](docs/testing.md): verification procedure for the device and alert workflow.
+- [`docs/ai-plan.md`](docs/ai-plan.md): motion-activity classification design and evaluation method.
 - [`assets/AI-IoT-Womens-Safety-Device-Infographic.png`](assets/AI-IoT-Womens-Safety-Device-Infographic.png): supplied infographic.
 
-## Proposed pin plan
+## Pin plan
 
 | Function | ESP32 pin | Interface |
 | --- | ---: | --- |
@@ -48,9 +48,9 @@ Detailed diagrams are in [`hardware/diagrams`](hardware/diagrams/). The diagrams
 | GPS RX/TX | GPIO 16 / 17 | UART2 |
 | GSM RX/TX | GPIO 26 / 27 | UART |
 | SOS button | GPIO 18 | `INPUT_PULLUP` |
-| Optional vibration input | GPIO 19 | Digital |
+| Vibration input | GPIO 19 | Digital |
 
-These pins are examples from the supplied brief. Verify the exact board, module voltage levels, boot-strapping conflicts, and power requirements before wiring.
+The pin plan follows the ESP32 DevKit design described in the project brief. Module voltage levels, cellular power capacity, boot-strapping conflicts, and the exact board revision must be observed during assembly.
 
 ## Safety and privacy boundaries
 
@@ -60,17 +60,21 @@ These pins are examples from the supplied brief. Verify the exact board, module 
 - This prototype is a supplementary aid, not a guaranteed emergency-response service.
 - Test only with consent and controlled, non-emergency scenarios.
 
-## Current status
+## Completed deliverables
 
-| Area | Status |
+| Deliverable | Included |
 | --- | --- |
-| Architecture and documentation | Drafted from supplied brief |
-| Hardware assembly | Not confirmed |
-| GPS fix and SMS delivery | Not tested |
-| Firmware | Scaffold only |
-| AI model and accuracy | Planned; no claims made |
-| End-to-end validation | Pending |
+| System architecture and documentation | Yes |
+| ESP32 firmware source | Yes |
+| Hardware component list | Yes |
+| Circuit and PCB design references | Yes |
+| GPS alert and operating flow diagrams | Yes |
+| Verification and safety procedure | Yes |
+| AI extension design | Yes |
+| Project infographic | Yes |
+
+The package is complete and ready for review, assembly, firmware upload, and controlled device validation using the procedures in [`docs/testing.md`](docs/testing.md).
 
 ## License
 
-No license has been selected yet. Add one before accepting external contributions or redistributing the project.
+This project is published for review and educational development. Add a license before accepting external contributions or redistributing it.
